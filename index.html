@@ -14,7 +14,7 @@
 
     <div class="container-fluid" ng-controller="BoardsController as boards">
       <div class="row">
-        <div class="col-sm-4" ng-repeat="board in boards.data">
+        <div class="col-sm-4" ng-repeat="board in boards.data track by $index">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">{{board.name}}</h3>
@@ -24,7 +24,7 @@
               <li class="list-group-item">
                 <form class="form-inline">
                   <div class="form-group">
-                    <input type="text" placeholder="let say your idea!" class="form-control" />
+                    <input type="text" ng-model="board.textNew" placeholder="let say your idea!" class="form-control" />
                   </div>
                   <button class="btn btn-default" ng-click="boards.addIdeaToBoard(board)">Add</button>
                 </form>
