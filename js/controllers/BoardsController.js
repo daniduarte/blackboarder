@@ -12,6 +12,8 @@ bbApp.controller('BoardsController', ['BoardsService', function(BoardsService){
       createdAt: Date.now()
     };
 
+    board.textNew = '';
+
     BoardsService.addIdeaToBoard(idea, board);
   };
 
