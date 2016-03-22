@@ -8,7 +8,7 @@ bbApp.controller('BoardsController', ['BoardsService', function(BoardsService){
 
   self.addIdeaToBoard = function(board){
     var idea = {
-      text: board.textNew,
+      text: board.textNew || 'Blank idea',
       createdAt: Date.now()
     };
 
