@@ -7,38 +7,17 @@ bbApp.factory('BoardsService', function(){
     {
       id: 1,
       name: 'Por hacer',
-      ideas: [
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() }
-      ]
+      ideas: []
     },
     {
       id: 2,
       name: 'En proceso',
-      ideas: [
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() }
-      ]
+      ideas: []
     },
     {
       id: 3,
       name: 'Hechas',
-      ideas: [
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() },
-        { text: 'Lorem ipsum dolor sit amet', createdAt: Date.now() }
-      ]
+      ideas: []
     },
   ];
 
