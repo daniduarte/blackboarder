@@ -13,6 +13,11 @@ bbApp.controller('BoardsController', ['BoardsService', function(BoardsService){
     };
 
     BoardsService.addIdeaToBoard(idea, board);
-  }
+  };
+
+  self.editIdea = function(idea){
+    idea.editable = true;
+  };
+
 }]);
 

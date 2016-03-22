@@ -20,7 +20,21 @@
               <h3 class="panel-title">{{board.name}}</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="idea in board.ideas">{{idea.text}}</li>
+              <li class="list-group-item" ng-repeat="idea in board.ideas">
+                <span ng-hide="idea.editable">
+                  {{idea.text}}
+                  <span class="pull-right">                    
+                    <i class="fa fa-edit" ng-click="boards.editIdea(idea)"></i>
+                  </span>
+                </span>
+                <span ng-show="idea.editable">
+                  <div class="form-group">
+                    <input type="text" ng-model="idea.text" class="form-control" />
+                  </div>
+                  <button class="btn btn-default">Cancel</button>
+                  <button class="btn btn-default">Save</button>
+                </span>
+              </li>
               <li class="list-group-item">
                 <form class="form-inline">
                   <div class="form-group">
