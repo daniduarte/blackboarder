@@ -6,7 +6,7 @@ bbApp.controller('BoardsController', ['BoardsService', function(BoardsService){
 
   self.data = BoardsService.data;
 
-  self.addIdeaToBoard = function(idea, board){
+  self.addIdeaToBoard = function(board){
     var idea = {
       text: 'Asdf',
       createdAt: Date.now()
