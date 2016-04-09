@@ -24,6 +24,10 @@ bbApp.controller('BoardsController', ['$scope', 'BoardsService', function($scope
   self.editIdea = function(idea){
     idea.editable = true;
   };
+  
+  self.cancelEditIdea = function(idea){
+    idea.editable = false;
+  }
 
 }]);
 
