@@ -28,6 +28,13 @@ bbApp.controller('BoardsController', ['BoardsService', function(BoardsService){
   self.cancelEditIdea = function(idea){
     idea.editable = false;
   };
+  
+  self.saveChangesInIdea = function(idea, board){
+    var ideaChanged = idea;
+    ideaChanged.text = idea.text
+    BoardsService.updateIdea(idea, board, ideaChanged);
+    idea.editable = false;
+  };
 
 }]);
 

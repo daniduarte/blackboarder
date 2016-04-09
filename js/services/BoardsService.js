@@ -33,6 +33,12 @@ bbApp.factory('BoardsService', function(){
       var boardIndex = data.indexOf(board);
       var ideaIndex = data[boardIndex].ideas.indexOf(idea);
       data[boardIndex].ideas.splice(ideaIndex, 1);
+    },
+    
+    updateIdea: function(idea, board, ideaChanged){
+      var boardIndex = data.indexOf(board);
+      var ideaIndex = data[boardIndex].ideas.indexOf(idea);
+      data[boardIndex].ideas[ideaIndex] = ideaChanged;
     }
     
   };

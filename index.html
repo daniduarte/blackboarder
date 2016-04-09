@@ -33,7 +33,7 @@
                     <input type="text" ng-model="idea.text" class="form-control" />
                   </div>
                   <button class="btn btn-default" ng-click="boards.cancelEditIdea(idea)">Cancel</button>
-                  <button class="btn btn-default">Save</button>
+                  <button class="btn btn-default" ng-click="boards.saveChangesInIdea(idea, board)">Save</button>
                 </span>
               </li>
               <li class="list-group-item">
