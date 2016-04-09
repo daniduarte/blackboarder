@@ -1,7 +1,7 @@
 
 ; // The magic
 
-bbApp.controller('BoardsController', ['$scope', 'BoardsService', function($scope, BoardsService){
+bbApp.controller('BoardsController', ['BoardsService', function(BoardsService){
   var self = this;
 
   self.data = BoardsService.data;
@@ -27,7 +27,7 @@ bbApp.controller('BoardsController', ['$scope', 'BoardsService', function($scope
   
   self.cancelEditIdea = function(idea){
     idea.editable = false;
-  }
+  };
 
 }]);
 
