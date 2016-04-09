@@ -1,7 +1,7 @@
 
 ; // The magic
 
-bbApp.controller('BoardsController', ['BoardsService', function(BoardsService){
+bbApp.controller('BoardsController', ['$scope', 'BoardsService', function($scope, BoardsService){
   var self = this;
 
   self.data = BoardsService.data;
@@ -15,6 +15,10 @@ bbApp.controller('BoardsController', ['BoardsService', function(BoardsService){
     board.textNew = '';
 
     BoardsService.addIdeaToBoard(idea, board);
+  };
+  
+  self.removeIdeaFromBoard = function(idea, board){
+    BoardsService.removeIdeaFromBoard(idea, board);
   };
 
   self.editIdea = function(idea){
