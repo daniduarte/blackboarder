@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8" />
+  <title>Blackborder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+
+  <div ng-app="bbApp">
+
+    <div class="container-fluid" ng-controller="BoardsController as boards">
+      <div class="row">
+        <div class="col-sm-4" ng-repeat="board in boards.data track by $index">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{board.name}}</h3>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="idea in board.ideas">
+                <span ng-hide="idea.editable">
+                  {{idea.text}}
+                  <span class="pull-right">                    
+                    <i class="fa fa-edit" ng-click="boards.editIdea(idea)"></i>
+                    <i class="fa fa-trash-o" ng-click="boards.removeIdeaFromBoard(idea, board)"></i>
+                  </span>
+                </span>
+                <span ng-show="idea.editable">
+                  <div class="form-group">
+                    <input type="text" ng-model="idea.text" class="form-control" />
+                  </div>
+                  <button class="btn btn-default" ng-click="boards.cancelEditIdea(idea)">Cancel</button>
+                  <button class="btn btn-default" ng-click="boards.saveChangesInIdea(idea, board)">Save</button>
+                </span>
+              </li>
+              <li class="list-group-item">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <input type="text" ng-model="board.textNew" placeholder="let say your idea!" class="form-control" />
+                  </div>
+                  <button class="btn btn-default" ng-click="boards.addIdeaToBoard(board)">Add</button>
+                </form>
+              </li>
+            </ul>
+            <div class="panel-footer">
+              <span class="badge">{{board.ideas.length}}</span> tasks in this board
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/services/BoardsService.js"></script>
+  <script type="text/javascript" src="js/controllers/BoardsController.js"></script>
+  
+</body>
+</html>
